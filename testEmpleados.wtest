@@ -1,0 +1,27 @@
+import empleados.*
+
+test "sueldo de Baigorria y de Galván" {
+
+	baigorria.actualizarEmpanadasVendidas(500)
+	galvan.actualizarSueldoActual(20000)
+	baigorria.actualizarEmpanadasVendidas(300)
+	gimenez.pagoSueldoA(baigorria)
+	gimenez.pagoSueldoA(galvan)
+
+	
+	assert.equals(800, baigorria.cobrarSueldo())
+	assert.equals(268000, gimenez.dineroActual())
+
+}
+
+
+test "sueldo de Baigorria y de Galván" {
+
+	galvan.gastar(4000)
+	galvan.gastar(8000)
+	
+
+	assert.equals(12000, galvan.totalDeuda())
+	assert.equals(0, galvan.totalDinero())
+
+}
